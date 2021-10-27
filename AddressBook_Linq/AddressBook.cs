@@ -40,5 +40,27 @@ namespace AddressBook_Linq
                 Console.WriteLine();
             }
         }
+        //UC 4
+        public void EditContact(DataTable dataTable)
+        {
+            var contacts = dataTable.AsEnumerable().Where(x => x.Field<string>("FirstName") == "James");
+            int count = contacts.Count();
+            if (count > 0)
+            {
+                foreach (var contact in contacts)
+                {
+                    contact.SetField("LastName", "Lopez");
+                    contact.SetField("City", "Washington Dc");
+                    contact.SetField("State", "America");
+                }
+                Console.WriteLine("Contact is Changed Successfullu");
+                DisplayContacts(contacts.CopyToDataTable());
+            }
+            else
+            {
+                Console.WriteLine("Contact Does not Found");
+            }
+        }
     }
 }
+    

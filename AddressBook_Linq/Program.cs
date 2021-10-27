@@ -11,6 +11,9 @@ namespace AddressBook_Linq
 
             DataTable data = addressBookTable.CreateAddressBookDataTable();
             addressBookTable.DisplayContacts(data);
+            addressBookTable.EditContact(data);
+
+
         }
     }
 }
