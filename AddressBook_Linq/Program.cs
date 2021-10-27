@@ -8,6 +8,9 @@ namespace AddressBook_Linq
         {
             Console.WriteLine("Welcome To Address Book Using LINQ !");
             AddressBookTable addressBookTable = new AddressBookTable();
+
+            DataTable data = addressBookTable.CreateAddressBookDataTable();
+            addressBookTable.DisplayContacts(data);
         }
     }
 }
